@@ -217,12 +217,9 @@ Classie Hamburger Button
 
 	nav li {
 		float: none;
-		margin-top: 10px;
+		margin: 10px 0px;
 		display: block;
 		text-align: center;
-		padding-right:0px;
-
-
 	}
 
 
