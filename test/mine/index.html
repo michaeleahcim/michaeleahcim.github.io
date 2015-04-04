@@ -1,0 +1,144 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Testing Pixi JS</title>
+
+
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+		background-color: #fff;
+	}
+
+	#container{
+		width: 500px;
+		margin: 30px auto;
+	}
+
+    .back {
+        background:red;
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        padding:20px 40px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .back:hover {
+        background:#BE0003;
+    }
+
+</style>
+
+<script src="../bin/pixi.dev.js"></script>
+</head>
+
+<body>
+
+<a href= "../../index.html" class="back">Back</a>
+<div id="container">
+
+</div>
+
+<script>
+// setting the stage
+	var container = document.getElementById("container");
+
+	// create an new instance of a pixi stage
+    var stage = new PIXI.Stage(0xFFFFFF);
+    stage.interactive = true;
+
+    // create a renderer instance.
+    var renderer = PIXI.autoDetectRenderer(500, 300);
+ 
+    // add the renderer view element to the DOM
+    container.appendChild(renderer.view);
+ 
+    requestAnimFrame( animate );
+ 
+
+// creating object
+ 	// create a texture from an image path
+    var texture = PIXI.Texture.fromImage("bunny.png");
+    // create a new Sprite using the texture
+    var bunny = new PIXI.Sprite(texture);
+    
+
+    // center the sprites anchor point
+    bunny.anchor.x = 0.5;
+    bunny.anchor.y = 0.5;
+ 
+    // move the sprite t the center of the screen
+    bunny.position.x = 250;
+    bunny.position.y = 150;
+ 
+    stage.addChild(bunny);
+
+
+    // click mode
+    bunny.buttonMode = true;
+    bunny.interactive = true;
+    
+    bunny.mousedown = bunny.touchstart = function(data) {
+        this.isdown = true;
+        this.alpha = 1;
+        stage.removeChild(bunny);
+    };
+
+
+// creating another object
+    var bunny2 = new PIXI.Sprite(texture);
+ 
+    // center the sprites anchor point
+    bunny2.anchor.x = 0.5;
+    bunny2.anchor.y = 0.5;
+ 
+    // move the sprite t the center of the screen
+    bunny2.position.x = 100;
+    bunny2.position.y = 100;
+ 
+    stage.addChild(bunny2);
+
+// click mode
+    bunny2.buttonMode = true;
+    bunny2.interactive = true;
+    
+    bunny2.mousedown = bunny2.touchstart = function(data) {
+        this.isdown = true;
+        this.alpha = 1;
+        stage.removeChild(bunny2);
+    };
+    
+
+
+
+// object animation
+    function animate() {
+ 
+        requestAnimFrame( animate );
+ 
+ 		// just for fun, lets rotate mr rabbit a little
+        bunny2.rotation += 0.1;
+
+        if (bunny2.position.x < 500){
+            bunny2.position.x += 2;
+        }
+
+        else {
+            bunny2.position.x = 0;
+        }
+
+        // render the stage   
+        renderer.render(stage);
+    }
+
+
+</script>
+
+
+
+</body>
+</html>

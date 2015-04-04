@@ -1,0 +1,167 @@
+
+body {
+	background: #1C1C1C;
+	color: white;
+	padding: 0px;
+	margin: 0px;
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: red;
+}
+
+::selection {
+    color: white; 
+    background: red;
+}
+
+.hide {
+	height: 0px !important;
+
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+nav {
+	width: 100%;
+	height: 50px;
+	background: black;
+	color: white;
+	padding: 10px 20px;
+	overflow: hidden;
+
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+/*
+#nav-toggle {
+	text-decoration: none;
+	color: white;
+	position: relative;
+	top:10px;
+	left: 30px;
+	font-size: 25px;
+}
+*/
+nav ul {
+	display: block;
+}
+
+nav li {
+	float: left;
+	list-style-type: none;
+	padding-right:40px;
+}
+
+nav li:last-child {
+	padding-right: 0px;
+}
+
+nav li a{
+	text-decoration: none;
+	font-size: 20px;
+	color: white;
+}
+
+#container {
+	width:700px;
+	margin: 10px auto;
+}
+
+h1 {
+
+	color: #00051A;
+	font-size: 200px;
+	font-weight: bold;
+	font-family: helvetica, sans-serif;
+	letter-spacing: -10px;
+	text-align: center;
+	margin: 0px;
+
+}	
+
+h2 {
+	color: #1F2121;
+	font-size: 50px;
+	font-family: helvetica, sans-serif;
+	text-align: center;
+	margin-top: -30px;
+}
+
+p{
+	font-size: 15px;
+	line-height: 20px;
+}
+
+footer {
+	color: #1F2121;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+	padding: 20px;
+	font-size: 15px;
+}
+
+
+
+
+
+
+
+/*
+Classie Hamburger Button
+*/
+
+.menu-button {
+	width: 25px;
+	height: 30px;
+	position: relative;
+	top:10px;
+	left: 30px;
+	display: block;
+	background: none;
+	outline: none;
+	border: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
+.morph-shape {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.morph-shape svg path,
+.morph-shape svg line {
+	stroke: #DDDCD7;
+	stroke-width: 9px;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.menu-button--open .morph-shape svg path:first-of-type {
+	-webkit-transform: translate3d(0, -8px, 0);
+	transform: translate3d(0, -8px, 0);
+}
+
+.menu-button--open .morph-shape svg path:nth-of-type(2) {
+	-webkit-transform: translate3d(0, 8px, 0);
+	transform: translate3d(0, 8px, 0);
+}
+
+
+/*
+/Classie Hamburger Button
+*/
+
