@@ -1,9 +1,10 @@
 
 body {
-	background: #1C1C1C;
+	background: #1E1F1E;
 	color: white;
 	padding: 0px;
 	margin: 0px;
+	font-family: helvetica,arial,sans-serif;
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -76,31 +77,57 @@ nav li a{
 
 h1 {
 
-	color: #00051A;
-	font-size: 200px;
-	font-weight: bold;
-	font-family: helvetica, sans-serif;
+	color: #CA8636;
+	font-size: 300px;
+	font-family: 'Amatic SC', cursive;
 	letter-spacing: -10px;
 	text-align: center;
-	margin: 0px;
+	margin: -30px 0px 0px 0px;
 
 }	
+h1:hover{
+	color:#353026;
+}
 
 h2 {
-	color: #1F2121;
+	color: #353026;
 	font-size: 50px;
-	font-family: helvetica, sans-serif;
+	font-family: 'Amatic SC', cursive;
 	text-align: center;
 	margin-top: -30px;
+	-webkit-animation: example 1s linear infinite;
+}
+
+@-webkit-keyframes example  {
+    0%   {color: #353026;}
+    50%  {color: white;}
+    100% {color: #353026;}
+}
+@-moz-keyframes example  {
+    0%   {color: #353026;}
+    50%  {color: white;}
+    100% {color: #353026;}
+}
+@-o-keyframes example  {
+    0%   {color: #353026;}
+    50%  {color: white;}
+    100% {color: #353026;}
+}
+@keyframes example  {
+    0%   {color: #353026;}
+    50%  {color: white;}
+    100% {color: #353026;}
 }
 
 p{
-	font-size: 15px;
-	line-height: 20px;
+	color: black;
+	font-size: 18px;
+	line-height: 25px;
+	text-align: justify;
 }
 
 footer {
-	color: #1F2121;
+	color: black;
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
