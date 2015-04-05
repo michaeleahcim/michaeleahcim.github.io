@@ -11,122 +11,121 @@
 <body>
 
 <div id="container">
-
-
-
 <script>
-// setting the stage
-
 var container = document.getElementById("container");
 var stage = new PIXI.Stage(0x1E1F1E);
-
-var windowwidth = window.innerWidth;
-var windowheight = 620;
+var windowwidth = window.innerWidth ;
 
 var renderer = PIXI.autoDetectRenderer(windowwidth, 600);
+
+var windowheight = 600;
+
+var texture = PIXI.Texture.fromImage("bunny.png");
+var starttexture = PIXI.Texture.fromImage("start.png");
+
+var bunny = new PIXI.Sprite(texture);
+var bunny3 = new PIXI.Sprite(starttexture);
+
+var bunnyExists = false;
+
+var hit = 0;
+var bunnyHitsFloor = 0;
+var speed = 1;
 
 stage.interactive = true;
 
 container.appendChild(renderer.view);
 requestAnimFrame( animate );
 
-var texture = PIXI.Texture.fromImage("bunny.png");
-var starttexture = PIXI.Texture.fromImage("start.png");
 
-
-var bunnyExists = false;
-
-function works(){
+function createNewBunny(){
     bunnyExists = true;
-    bunny.buttonMode = true;
-    bunny.interactive = true;
+    bunny.position.x = windowwidth * Math.random();
+    bunny.position.y = -10;
     stage.addChild(bunny);
  }
 
+// Bunny
+    bunny.anchor.x = 0.5;
+    bunny.anchor.y = 0.5;
+    bunny.position.x = windowwidth;
+    bunny.position.y = -10;
 
+    bunny.buttonMode = true;
+    bunny.interactive = true;
 
-var bunny = new PIXI.Sprite(texture);
-bunny.anchor.x = 0.5;
-bunny.anchor.y = 0.5;
-bunny.position.x = windowwidth/2;
-bunny.position.y = -10;
+    bunny.mousedown = bunny.touchstart = function(data) {
+        this.isdown = true;
+        this.alpha = 1;
+        bunnyExists = false;
 
-bunny.mousedown = bunny.touchstart = function(data) {
-    this.isdown = true;
-    this.alpha = 1;
-    stage.removeChild(bunny);
-    bunnyExists = false;
+        hit += 1;
+        speed += .5;
+        document.getElementById("p1").innerHTML = String(hit);
 
-    bunny3Exists = true;
+        stage.removeChild(bunny);
+        createNewBunny();
+     };
+
+// Start Button
+    bunny3.anchor.x = 0.5;
+    bunny3.anchor.y = 0.5;
+    bunny3.position.x = windowwidth/2;
+    bunny3.position.y = windowheight/2;
+
     bunny3.buttonMode = true;
     bunny3.interactive = true;
     stage.addChild(bunny3);
-};
 
-// Bunny 3
-var bunny3 = new PIXI.Sprite(starttexture);
-bunny3.anchor.x = 0.5;
-bunny3.anchor.y = 0.5;
-bunny3.position.x = windowwidth/2;
-bunny3.position.y = windowheight/2;
+    bunny3.mousedown = bunny3.touchstart = function(data) {
+        this.isdown = true;
+        this.alpha = 1;
+        stage.removeChild(bunny3);
 
-bunny3Exists = true;
-bunny3.buttonMode = true;
-bunny3.interactive = true;
-stage.addChild(bunny3);
+        hit = 0;
+        bunnyHitsFloor = 0;
+        speed = 2;
+        createNewBunny();
+    };
 
-
-bunny3.mousedown = bunny3.touchstart = function(data) {
-    this.isdown = true;
-    this.alpha = 1;
-    stage.removeChild(bunny3);
-    bunnyExists = false;
-    
-
-    works();
-};
-
-
-var bunnyHitsFloor = 0;
-// object animation
 function animate() {
     requestAnimFrame( animate );
 
     if (bunnyExists){
         if (bunny.position.y < windowheight){
-            bunny.position.y += 3;
+            bunny.position.y += speed;
+
+            if (bunnyHitsFloor == 3) {
+                stage.removeChild(bunny);
+                bunnyExists = false;
+
+                bunny3Exists = true;
+                bunny3.buttonMode = true;
+                bunny3.interactive = true;
+                stage.addChild(bunny3);
+            }
+
         }
 
         else {
             bunny.position.y = -10;
             bunnyHitsFloor += 1;
         }
-    }
 
-    else{
-        bunny.position.y = -10;
-    }
-
-    if (bunnyHitsFloor == 3) {
-        stage.removeChild(bunny);
-        bunnyExists = false;
-
-        bunny3Exists = true;
-        bunny3.buttonMode = true;
-        bunny3.interactive = true;
-        stage.addChild(bunny3);
+        
     }
 
     renderer.render(stage);
-
-
 }
 
 
 
 </script>
 </div>
-<a href= "../../index.html" id="back"> Back </a>
 
+<article>
+<a href= "../../index.html" id="back"> Back </a>
+<p id="p1"> 0 </p>
+</article>
 </body>
 </html>
