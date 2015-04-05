@@ -42,9 +42,15 @@ container.appendChild(renderer.view);
 requestAnimFrame( animate );
 
 
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function createNewBunny(){
     bunnyExists = true;
-    bunny.position.x = windowwidth * Math.random();
+    var max = windowwidth-20;
+    var widespot = getRandomInt(max,20);
+    bunny.position.x = widespot;
     bunny.position.y = -10;
 
 
