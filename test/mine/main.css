@@ -1,17 +1,18 @@
 body {
     padding:10px 0px 0px 0px;
-    margin: 15px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    background: #141312;
 }
 
 #container{
-	width: 99.4%;
+	width: 100%;
     height:600px;
-    border: 3px solid red;
-    margin-top: 50px;
+    margin-top: -5px;
+    margin-bottom: 50px;
 }
 
 #back {
-    background:red;
+    background:#000;
     font-size: 20px;
     padding:20px 40px;
     margin: 10px;
@@ -21,5 +22,26 @@ body {
 }
 
 #back:hover {
-    background:#BE0003;
+    background: #353026;
+    color: #CA8636;
+}
+
+#startbutton {
+    font-size: 20px;
+    padding: 20px 40px;
+    background: #000;
+    color: white;
+    border: none;
+    position:relative;
+    top: -400px;
+    width:;
+}
+
+#startbutton:hover {
+    background: #353026;
+    color: #CA8636;
+}
+
+.hide {
+    display: none;
 }

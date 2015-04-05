@@ -5,7 +5,6 @@
 <title>Testing Pixi JS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="../bin/pixi.dev.js"></script>
 
 <link rel="stylesheet" type="text/css" href="main.css">
@@ -13,96 +12,82 @@
 
 <body>
 
-
-<a href= "../../index.html" id="back"> Back </a>
-
-
 <div id="container">
 
 </div>
 
 <script>
 // setting the stage
-	var container = document.getElementById("container");
-    var stage = new PIXI.Stage(0x95FF00);
-    var windowwidth = window.innerWidth - 6;
-    var renderer = PIXI.autoDetectRenderer(windowwidth, 600);
 
-    stage.interactive = true;
+var container = document.getElementById("container");
+var stage = new PIXI.Stage(0x1E1F1E);
 
-    container.appendChild(renderer.view);
-    requestAnimFrame( animate );
- 
+var windowwidth = window.innerWidth;
+var windowheight = 620;
+
+var renderer = PIXI.autoDetectRenderer(windowwidth, 600);
+
+stage.interactive = true;
+
+container.appendChild(renderer.view);
+requestAnimFrame( animate );
+
+var texture = PIXI.Texture.fromImage("bunny.png");
+
+// Bunny 3
+
+var bunny3 = new PIXI.Sprite(texture);
+bunny3.anchor.x = 0.5;
+bunny3.anchor.y = 0.5;
+bunny3.position.x = windowwidth/2;
+bunny3.position.y = -10;
+
+var bunnyExists = false;
+
+ function works(){
+
+    bunnyExists = true;
+    bunny3.buttonMode = true;
+    bunny3.interactive = true;
+    stage.addChild(bunny3);
+ }
 
 
-// Bunny 1
-    var texture = PIXI.Texture.fromImage("bunny.png");
-    var bunny = new PIXI.Sprite(texture);
-    
-
-    bunny.anchor.x = 0.5;
-    bunny.anchor.y = 0.5;
- 
-    bunny.position.x = 250;
-    bunny.position.y = 150;
- 
-    stage.addChild(bunny);
-
-
-    bunny.buttonMode = true;
-    bunny.interactive = true;
-    
-    bunny.mousedown = bunny.touchstart = function(data) {
-        this.isdown = true;
-        this.alpha = 1;
-        stage.removeChild(bunny);
-    };
-
-
-// Bunny 2
-    var bunny2 = new PIXI.Sprite(texture);
- 
-    bunny2.anchor.x = 0.5;
-    bunny2.anchor.y = 0.5;
- 
-    bunny2.position.x = 100;
-    bunny2.position.y = 100;
- 
-    stage.addChild(bunny2);
-
-    bunny2.buttonMode = true;
-    bunny2.interactive = true;
-    
-    bunny2.mousedown = bunny2.touchstart = function(data) {
-        this.isdown = true;
-        this.alpha = 1;
-        stage.removeChild(bunny2);
-    };
-    
-
+bunny3.mousedown = bunny3.touchstart = function(data) {
+    this.isdown = true;
+    this.alpha = 1;
+    stage.removeChild(bunny3);
+    bunnyExists = false;
+};
 
 
 // object animation
-    function animate() {
- 
-        requestAnimFrame( animate );
-        bunny2.rotation += 0.1;
+function animate() {
+    requestAnimFrame( animate );
 
-        if (bunny2.position.x < window.innerWidth){
-            bunny2.position.x += 2;
+    if (bunnyExists){
+        if (bunny3.position.y < windowheight){
+            bunny3.position.y += 3;
         }
 
         else {
-            bunny2.position.x = 0;
+            bunny3.position.y = -10;
         }
-
-        renderer.render(stage);
     }
+
+    else{
+        bunny3.position.y = -10;
+    }
+
+    renderer.render(stage);
+}
+
 
 
 </script>
 
-
+<a href= "../../index.html" id="back"> Back </a>
+<button onclick="works()" id="startbutton">Start Game</button>
 
 </body>
 </html>
