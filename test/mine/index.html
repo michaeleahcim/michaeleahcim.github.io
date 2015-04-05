@@ -32,6 +32,10 @@ var hit = 0;
 var bunnyHitsFloor = 0;
 var speed = .5;
 
+var score = new PIXI.Text(String(hit), {font:"50px Arial", fill:"white"});
+    
+
+
 stage.interactive = true;
 
 container.appendChild(renderer.view);
@@ -42,8 +46,14 @@ function createNewBunny(){
     bunnyExists = true;
     bunny.position.x = windowwidth * Math.random();
     bunny.position.y = -10;
+
+
     stage.addChild(bunny);
  }
+
+
+
+
 
 // Bunny
     bunny.anchor.x = 0.5;
@@ -61,7 +71,12 @@ function createNewBunny(){
 
         hit += 1;
         speed += .25;
-        document.getElementById("p1").innerHTML = String(hit);
+
+        stage.removeChild(score);
+        score = new PIXI.Text(String(hit), {font:"50px Arial", fill:"white"});
+        score.position.x = windowwidth/2;
+        score.position.y = windowheight/2;
+        stage.addChild(score);
 
         stage.removeChild(bunny);
         createNewBunny();
@@ -88,6 +103,7 @@ function createNewBunny(){
         createNewBunny();
     };
 
+
 function animate() {
     requestAnimFrame( animate );
 
@@ -97,11 +113,10 @@ function animate() {
 
             if (bunnyHitsFloor == 3) {
                 stage.removeChild(bunny);
+                stage.removeChild(score);
+
                 bunnyExists = false;
 
-                bunny3Exists = true;
-                bunny3.buttonMode = true;
-                bunny3.interactive = true;
                 stage.addChild(bunny3);
             }
 
@@ -114,7 +129,6 @@ function animate() {
 
         
     }
-
     renderer.render(stage);
 }
 
@@ -125,7 +139,7 @@ function animate() {
 
 <article>
 <a href= "../../index.html" id="back"> Back </a>
-<p id="p1"> 0 </p>
+
 </article>
 </body>
 </html>
