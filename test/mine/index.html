@@ -2,11 +2,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Testing Pixi JS</title>
+<title>Made with Pixi JS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <script src="../bin/pixi.dev.js"></script>
-
 <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
@@ -14,7 +12,7 @@
 
 <div id="container">
 
-</div>
+
 
 <script>
 // setting the stage
@@ -33,24 +31,49 @@ container.appendChild(renderer.view);
 requestAnimFrame( animate );
 
 var texture = PIXI.Texture.fromImage("bunny.png");
+var starttexture = PIXI.Texture.fromImage("start.png");
 
-// Bunny 3
-
-var bunny3 = new PIXI.Sprite(texture);
-bunny3.anchor.x = 0.5;
-bunny3.anchor.y = 0.5;
-bunny3.position.x = windowwidth/2;
-bunny3.position.y = -10;
 
 var bunnyExists = false;
 
- function works(){
-
+function works(){
     bunnyExists = true;
+    bunny.buttonMode = true;
+    bunny.interactive = true;
+    stage.addChild(bunny);
+ }
+
+
+
+var bunny = new PIXI.Sprite(texture);
+bunny.anchor.x = 0.5;
+bunny.anchor.y = 0.5;
+bunny.position.x = windowwidth/2;
+bunny.position.y = -10;
+
+bunny.mousedown = bunny.touchstart = function(data) {
+    this.isdown = true;
+    this.alpha = 1;
+    stage.removeChild(bunny);
+    bunnyExists = false;
+
+    bunny3Exists = true;
     bunny3.buttonMode = true;
     bunny3.interactive = true;
     stage.addChild(bunny3);
- }
+};
+
+// Bunny 3
+var bunny3 = new PIXI.Sprite(starttexture);
+bunny3.anchor.x = 0.5;
+bunny3.anchor.y = 0.5;
+bunny3.position.x = windowwidth/2;
+bunny3.position.y = windowheight/2;
+
+bunny3Exists = true;
+bunny3.buttonMode = true;
+bunny3.interactive = true;
+stage.addChild(bunny3);
 
 
 bunny3.mousedown = bunny3.touchstart = function(data) {
@@ -58,36 +81,52 @@ bunny3.mousedown = bunny3.touchstart = function(data) {
     this.alpha = 1;
     stage.removeChild(bunny3);
     bunnyExists = false;
+    
+
+    works();
 };
 
 
+var bunnyHitsFloor = 0;
 // object animation
 function animate() {
     requestAnimFrame( animate );
 
     if (bunnyExists){
-        if (bunny3.position.y < windowheight){
-            bunny3.position.y += 3;
+        if (bunny.position.y < windowheight){
+            bunny.position.y += 3;
         }
 
         else {
-            bunny3.position.y = -10;
+            bunny.position.y = -10;
+            bunnyHitsFloor += 1;
         }
     }
 
     else{
-        bunny3.position.y = -10;
+        bunny.position.y = -10;
+    }
+
+    if (bunnyHitsFloor == 3) {
+        stage.removeChild(bunny);
+        bunnyExists = false;
+
+        bunny3Exists = true;
+        bunny3.buttonMode = true;
+        bunny3.interactive = true;
+        stage.addChild(bunny3);
     }
 
     renderer.render(stage);
+
+
 }
 
 
 
 </script>
-
+</div>
 <a href= "../../index.html" id="back"> Back </a>
-<button onclick="works()" id="startbutton">Start Game</button>
 
 </body>
 </html>
