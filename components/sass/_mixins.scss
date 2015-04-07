@@ -1,0 +1,220 @@
+// _mixins.scss
+
+
+
+
+
+
+/*
+
+VARIABLES
+
+*/
+
+$dark-gray : #1E1F1E;
+$black : #141312;
+$yellow : #CA8636;
+$dark-yellow : darken($yellow, 30%);
+
+$coolfont : 'Amatic SC', cursive;
+$font-stack : helvetica, sans-serif;
+
+
+
+
+
+
+/*
+
+GLOBAL STYLES
+
+*/
+
+.nospacing {
+	padding: 0px;
+	margin: 0px;
+}
+
+body{
+    background-color: $dark-gray;
+	font-size: 18px;
+    font-family: helvetica, sans-serif;
+    @extend .nospacing;
+} 
+
+
+.hide {
+	height: 0px !important;
+
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+nav {
+	font-family: $coolfont;
+	background-color: $black;
+	color: white;
+	width: 100%;
+	height: 80px;
+	overflow: hidden;
+
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+	
+	ul {
+		@extend .nospacing;
+	}
+
+	li {
+		list-style-type: none;
+		padding: 10px 20px;
+	}
+	
+	a {
+		color: white;
+		font-size: 50px;
+		text-decoration:none;
+	}
+
+	a:hover {
+		color:#D7DAD8;
+	}
+	
+}
+
+h1 {
+	color: $yellow;
+	font-family: $coolfont;
+	@extend .nospacing;	
+}
+
+h1:hover{
+		color:$dark-yellow;
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: red;
+}
+
+::selection {
+    color: white; 
+    background: red;
+}
+
+
+
+
+
+
+/*
+
+MIXINS
+
+*/
+
+@mixin smallScreen {
+	@media only screen and(max-width: 600px){
+		@content;
+	}
+}
+
+@mixin largeScreen {
+	@media only screen and(min-width: 1200px){
+		@content;
+	}
+}
+
+@mixin verticalGradient($fromColor, $toColor){
+background: $fromColor; /* Old browsers */
+background: -moz-linear-gradient(top, $fromColor 0%, $toColor 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$fromColor), color-stop(100%,$toColor)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, $fromColor 0%,$toColor 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, $fromColor 0%,$toColor 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, $fromColor 0%,$toColor 100%); /* IE10+ */
+background: linear-gradient(to bottom, $fromColor 0%,$toColor 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$fromColor', endColorstr='$toColor',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin animation ($data){
+	-webkit-animation: $data;
+	-moz-animation: $data;
+	-o-animation: $data;
+	animation: $data;
+	//animation: example 1s linear infinite;
+}
+
+@mixin keyframes {
+	@-webkit-keyframes example{
+	    @content;
+	}
+	@-moz-keyframes example{
+	    @content;
+	}
+	@-o-keyframes example{
+	    @content;
+	}
+	@keyframes example{
+	    @content;
+	}
+}
+
+
+
+
+
+
+
+/*
+Classie Hamburger Button
+*/
+
+.menu-button {
+	width: 25px;
+	height: 30px;
+	position: relative;
+	top:10px;
+	left: 30px;
+	display: block;
+	background: none;
+	outline: none;
+	border: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
+.morph-shape {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.morph-shape svg path,
+.morph-shape svg line {
+	stroke: #DDDCD7;
+	stroke-width: 9px;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.menu-button--open .morph-shape svg path:first-of-type {
+	-webkit-transform: translate3d(0, -8px, 0);
+	transform: translate3d(0, -8px, 0);
+}
+
+.menu-button--open .morph-shape svg path:nth-of-type(2) {
+	-webkit-transform: translate3d(0, 8px, 0);
+	transform: translate3d(0, 8px, 0);
+}
+
+
+/*
+/Classie Hamburger Button
+*/
+

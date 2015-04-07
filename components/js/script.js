@@ -1,8 +1,5 @@
 
 
-$( "#hamburger" ).click(function() {
-  $( "nav" ).toggleClass("hide");
-});
 
 
 

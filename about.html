@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Thanks Github</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
     <link href="http://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-    <link href="components/css/index.css" rel="stylesheet">
+    <link href="components/css/about.css" rel="stylesheet">
+    <script type="text/javascript">
+      if (foo) {
+         bar(1 + 5)
+      }
+    </script>
   </head>
   <body>
     <nav id="navigation" class="hide">
-      <ul>
-        <li> <a href="about.html" class="button">About</a></li>
-      </ul>
+      <li> <a href="index.html" class="button">Back to Main Page</a></li>
     </nav>
     <div id="menu-button">
       <!-- Classie Hamburger Button -->
@@ -26,24 +28,24 @@
       <!-- /Classie Hamburger Button -->
       
     </div>
-    <div id="container">
-      <h1>Michael</h1>
-      <h2>Visual Learner</h2>
+    <div id="container" class="col">
+      <h1>About Me</h1>
       <p>
-        Choose a job you love, and you will never have to work a day in your life.
+        My name is Michael <br>
+        I'm 26 years old <br>
+        I like visual things <br>
+        I also like to ride my bike <br>
+        
         
       </p>
-      <ul>
-        <li> <a href="pixijs/mine/index.html" class="button">Game 1 _ Falling Rabbits</a></li>
-      </ul>
-      <script type="text/javascript">
-        var burger = document.getElementById("hamburger");
-        var nav = document.getElementById("navigation");
-        
-        burger.onclick = function(){
-          nav.classList.toggle("hide");
-        }
-      </script>
     </div>
   </body>
+  <script type="text/javascript">
+    var burger = document.getElementById("hamburger");
+    var nav = document.getElementById("navigation");
+    
+    burger.onclick = function(){
+      nav.classList.toggle("hide");
+    }
+  </script>
 </html>

@@ -32,7 +32,7 @@ var hit = 0;
 var bunnyHitsFloor = 0;
 var speed = .5;
 
-var score = new PIXI.Text(String(hit), {font:"50px Arial", fill:"white"});
+var score = new PIXI.Text(String(hit), {font:"bold 100px Arial", fill:"black"});
     
 
 
@@ -75,7 +75,7 @@ function createNewBunny(){
         speed += .25;
 
         stage.removeChild(score);
-        score = new PIXI.Text(String(hit), {font:"50px Arial", fill:"white"});
+        score = new PIXI.Text(String(hit), {font:"bold 100px Arial", fill:"black"});
         score.position.x = windowwidth/2;
         score.position.y = windowheight/2;
         stage.addChild(score);

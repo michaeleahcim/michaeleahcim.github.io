@@ -1,0 +1,38 @@
+@import '_mixins';
+
+// Gradient:
+//@include verticalGradient($darkyellow, red);
+
+body{    
+    @include smallScreen {
+    	background-color:red;	
+    }
+    @include largeScreen {
+    	background-color:green;	
+    }
+}
+
+#container {
+    width: 600px;
+    margin: 20px auto;
+	padding:20px;
+}
+
+h1 {
+	font-size: 125px;
+ 	@include animation(example 1s linear infinite);
+}
+
+@include keyframes {
+	0%   {color: $dark-yellow;}
+    50%  {color: white;}
+    100% {color: $dark-yellow;}
+}
+
+p{
+	color: $black;
+	line-height: 25px;
+   	@extend .nospacing;
+}
+
+

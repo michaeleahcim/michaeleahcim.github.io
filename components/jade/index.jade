@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Thanks Github</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-    <link href="components/css/index.css" rel="stylesheet">
-  </head>
-  <body>
-    <nav id="navigation" class="hide">
-      <ul>
-        <li> <a href="about.html" class="button">About</a></li>
-      </ul>
-    </nav>
-    <div id="menu-button">
+doctype html
+html(lang="en")
+  head
+    title Thanks Github
+    
+    meta( name='viewport', content='width=device-width, initial-scale=1').
+    link(href='http://fonts.googleapis.com/css?family=Amatic+SC', rel='stylesheet').
+    link(href='components/css/index.css', rel='stylesheet').
+  
+  body
+    nav#navigation.hide
+      ul
+        li 
+          a(class='button', href='about.html') About
+  
+    #menu-button.
       <!-- Classie Hamburger Button -->
       <button id="hamburger" class="menu-button">
         <span id="morph-shape" class="morph-shape" data-morph-open="M3,20c0,0,12-4,27-4s27,4,27,4;M3,60c0,0,12,4,27,4s27-4,27-4" data-morph-close="M3,20c0,0,12,4,27,4s27-4,27-4;M3,60c0,0,12-4,27-4s27,4,27,4">
@@ -24,26 +25,27 @@
         </span>
       </button>
       <!-- /Classie Hamburger Button -->
-      
-    </div>
-    <div id="container">
-      <h1>Michael</h1>
-      <h2>Visual Learner</h2>
-      <p>
+
+    #container
+      h1 Michael
+      h2 Visual Learner
+      p.
         Choose a job you love, and you will never have to work a day in your life.
-        
-      </p>
-      <ul>
-        <li> <a href="pixijs/mine/index.html" class="button">Game 1 _ Falling Rabbits</a></li>
-      </ul>
-      <script type="text/javascript">
+
+      ul
+        li 
+          a(class='button', href='pixijs/mine/index.html') Game 1 _ Falling Rabbits
+    
+
+
+      
+      script(type='text/javascript').
         var burger = document.getElementById("hamburger");
         var nav = document.getElementById("navigation");
-        
+
         burger.onclick = function(){
           nav.classList.toggle("hide");
         }
-      </script>
-    </div>
-  </body>
-</html>
+        
+
+

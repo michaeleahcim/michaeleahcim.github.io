@@ -1,0 +1,50 @@
+@import '_mixins';
+
+
+
+#container {
+	width:600px;
+	margin: 0px auto;
+
+	ul{
+		margin-top: 40px;	
+	}
+
+	p{
+		color: $black;
+		line-height: 25px;
+		text-align: justify;
+	}
+
+	a{
+		text-decoration: none;
+		color: white;
+	}
+
+	a:hover {
+		color:$dark-yellow;
+	}
+}
+
+h1 {
+	font-size: 300px;
+	letter-spacing: -10px;
+	text-align: center;
+	margin-top: -30px;
+}	
+
+h2 {
+	font-size: 50px;
+	font-family: $coolfont;
+	text-align: center;
+	margin-top: -30px;
+	@include animation(example 1s linear infinite);
+}
+
+@include keyframes {
+	0%   {color: $dark-yellow;}
+    50%  {color: white;}
+    100% {color: $dark-yellow;}
+}
+
+

@@ -1,0 +1,160 @@
+/*
+
+VARIABLES
+
+*/
+/*
+
+GLOBAL STYLES
+
+*/
+.nospacing, body, nav ul, h1, p {
+  padding: 0px;
+  margin: 0px; }
+
+body {
+  background-color: #1E1F1E;
+  font-size: 18px;
+  font-family: helvetica, sans-serif; }
+
+.hide {
+  height: 0px !important;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out; }
+
+nav {
+  font-family: "Amatic SC", cursive;
+  background-color: #141312;
+  color: white;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out; }
+  nav li {
+    list-style-type: none;
+    padding: 10px 20px; }
+  nav a {
+    color: white;
+    font-size: 50px;
+    text-decoration: none; }
+  nav a:hover {
+    color: #D7DAD8; }
+
+h1 {
+  color: #CA8636;
+  font-family: "Amatic SC", cursive; }
+
+h1:hover {
+  color: #523615; }
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: red; }
+
+::selection {
+  color: white;
+  background: red; }
+
+/*
+
+MIXINS
+
+*/
+/*
+Classie Hamburger Button
+*/
+.menu-button {
+  width: 25px;
+  height: 30px;
+  position: relative;
+  top: 10px;
+  left: 30px;
+  display: block;
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  /* For some Androids */ }
+
+.morph-shape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+.morph-shape svg path,
+.morph-shape svg line {
+  stroke: #DDDCD7;
+  stroke-width: 9px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s; }
+
+.menu-button--open .morph-shape svg path:first-of-type {
+  -webkit-transform: translate3d(0, -8px, 0);
+  transform: translate3d(0, -8px, 0); }
+
+.menu-button--open .morph-shape svg path:nth-of-type(2) {
+  -webkit-transform: translate3d(0, 8px, 0);
+  transform: translate3d(0, 8px, 0); }
+
+/*
+/Classie Hamburger Button
+*/
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: red; } }
+@media only screen and (min-width: 1200px) {
+  body {
+    background-color: green; } }
+
+#container {
+  width: 600px;
+  margin: 20px auto;
+  padding: 20px; }
+
+h1 {
+  font-size: 125px;
+  -webkit-animation: example 1s linear infinite;
+  -moz-animation: example 1s linear infinite;
+  -o-animation: example 1s linear infinite;
+  animation: example 1s linear infinite; }
+
+@-webkit-keyframes example {
+  0% {
+    color: #523615; }
+  50% {
+    color: white; }
+  100% {
+    color: #523615; } }
+@-moz-keyframes example {
+  0% {
+    color: #523615; }
+  50% {
+    color: white; }
+  100% {
+    color: #523615; } }
+@-o-keyframes example {
+  0% {
+    color: #523615; }
+  50% {
+    color: white; }
+  100% {
+    color: #523615; } }
+@keyframes example {
+  0% {
+    color: #523615; }
+  50% {
+    color: white; }
+  100% {
+    color: #523615; } }
+p {
+  color: #141312;
+  line-height: 25px; }
