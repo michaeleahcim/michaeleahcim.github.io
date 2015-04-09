@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+html, body {
+  width:100%;
+  height:100%;
+  padding:0px;
+  margin:0px;
+}
+
+#container {
+  width:100vw;
+  height:80vh;
+  overflow:hidden;
+}
+
+#allpictures{
+  width: 406%;
+  height: 80vh;
+  \\border: blue 5px solid;
+  position:relative;
+  top:0px;
+  left:0vw;
+  margin:0px;
+  padding:0px;
+  transition: left 1s ease-in-out;
+}
+
+.picture {
+ width:100vw;
+ height:100%;
+ margin:0px;
+ padding:0px;
+ float:left;
+}
+
+#picture1 {
+ background: url("http://mars.jpl.nasa.gov/images/PIA02653-full.jpg");
+  background-size:cover;
+ background-repeat: no-repeat;
+ background-color: green;
+}
+
+#picture2 {
+ background: url("http://www.nasa.gov/sites/default/files/pia17959_3.jpg");
+ background-size:cover;
+ background-repeat: no-repeat;
+ background-color: red;
+}
+
+#picture3 {
+ background: url("http://voices.nationalgeographic.com/files/2013/09/mars-comet-NASA.jpg");
+ background-size:cover;
+ background-repeat: no-repeat;
+ background-color: blue;
+}
+
+
+#picture4 {
+ background: url("http://mars.jpl.nasa.gov/images/mars-curiosity-rover-mastcam-sedimentary-deposit-lakebed-rocks-pia19074-full.jpg");
+  background-size:cover;
+ background-repeat: no-repeat;
+ background-color: black;
+}
+
+#buttons {
+ display:block;
+ position: absolute;
+ top:75vh;
+ width:90%;
+ padding:10px;
+}
+
+#back, #next {
+ background:#262827;
+ border: 4px solid white;
+ padding: 20px 40px;
+ color:#fff;
+ font-size:20px;
+ font-weight:bold;
+ z-index: 10;
+}
+
+#next{
+float:right;
+}
+
+#text {
+  width:400px;
+  margin:50px auto;
+}
+
+#text p {
+  margin-bottom: 100px;
+}
+
+
