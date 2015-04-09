@@ -113,6 +113,8 @@ Classie Hamburger Button
   margin: 0px auto; }
   #container ul {
     margin-top: 40px; }
+  #container li {
+    margin-top: 10px; }
   #container p {
     color: #141312;
     line-height: 25px;
