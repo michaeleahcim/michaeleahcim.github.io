@@ -22,7 +22,7 @@ html, body {
   left:0vw;
   margin:0px;
   padding:0px;
-  transition: left 1s ease-in-out;
+  transition: left .5s ease-in-out;
 }
 
 .picture {
