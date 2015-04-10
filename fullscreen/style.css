@@ -23,6 +23,7 @@ html, body {
   margin:0px;
   padding:0px;
   transition: left .5s ease-in-out;
+  z-index: -1;
 }
 
 .picture {
@@ -66,14 +67,14 @@ html, body {
  display:block;
  position: absolute;
  top:75vh;
- width:90%;
- padding:10px;
+ width:100%;
 }
 
 #back, #next {
  background:#262827;
  border: 4px solid white;
  padding: 20px 40px;
+ margin:0px 30px;
  color:#fff;
  font-size:20px;
  font-weight:bold;
@@ -85,21 +86,26 @@ float:right;
 }
 
 #text {
+  background: white;
+  padding: 10px 30px;
   width:400px;
-  margin:50px auto;
+  margin:-100px auto 50px auto;
+  z-index: 10;
 }
 
 #text p {
   margin-bottom: 100px;
   font-size: 14px;
   line-height: 18px;
-  text-align: justify;
 }
 
 h1{
   font-family: helvetica,sans-serif;
-  font-size: 30px;
+  font-size: 45px;
   font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
 }
 
 
