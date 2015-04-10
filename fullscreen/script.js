@@ -9,19 +9,27 @@ var pos = 0;
 var next = document.getElementById("next");
 
 next.onclick = function(){
-if(pos > -300){
-  pos -= 100;
-  pics.style.left = pos +"vw";
-}
+	if(pos > -300){
+	  pos -= 100;
+	  pics.style.left = pos +"vw";
+	}
+	else if (pos == -300){
+	  pos = 0;
+	  pics.style.left = pos + "vw";
+	}
 }
 
 var back = document.getElementById("back");
 
 back.onclick = function(){
-if (pos < 0){
-  pos += 100;
-  pics.style.left = pos +"vw";
-}
+	if (pos < 0){
+	  pos += 100;
+	  pics.style.left = pos +"vw";
+	}
+	else if(pos == 0){
+	  pos = -300;
+	  pics.style.left = pos+"vw";
+	}
 }
 
 
