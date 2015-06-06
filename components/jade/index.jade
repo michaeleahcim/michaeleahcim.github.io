@@ -4,48 +4,26 @@ html(lang="en")
     title Thanks Github
     
     meta( name='viewport', content='width=device-width, initial-scale=1').
-    link(href='http://fonts.googleapis.com/css?family=Amatic+SC', rel='stylesheet').
     link(href='components/css/index.css', rel='stylesheet').
   
   body
-    nav#navigation.hide
-      ul
-        li 
-          a(class='button', href='about.html') About
-  
-    #menu-button.
-      <!-- Classie Hamburger Button -->
-      <button id="hamburger" class="menu-button">
-        <span id="morph-shape" class="morph-shape" data-morph-open="M3,20c0,0,12-4,27-4s27,4,27,4;M3,60c0,0,12,4,27,4s27-4,27-4" data-morph-close="M3,20c0,0,12,4,27,4s27-4,27-4;M3,60c0,0,12-4,27-4s27,4,27,4">
-          <svg width="100%" height="100%" viewBox="0 0 60 80" preserveAspectRatio="none">
-            <path d="M3,20c0,0,12,0,27,0s27,0,27,0"/>
-            <line x1="3" y1="40" x2="57" y2="40"/>
-            <path d="M3,60c0,0,12,0,27,0s27,0,27,0"/>
-          </svg>
-        </span>
-      </button>
-      <!-- /Classie Hamburger Button -->
-
     #container
-      h1 Michael
-      h2 Visual Learner
-      p.
-        Choose a job you love, and you will never have to work a day in your life.
-
       ul
-        li 
-          a(class='button', href='pixijs/mine/index.html') Game 1 _ Falling Rabbits
+        li.title Michael 
+        li.title Visual Learner     
+        li: a(href="about.html") About 
+        li: a(href="portfolio.html") Portfolio 
+        li: a(href="experiments.html") Experiments 
+        li: a(href="life.html") Things I've Learned about Life 
+        li: a(href="contact.html") Contact 
+        
+
+        //li: a(href='pixijs/mine/index.html') Game 1 _ Falling Rabbits
     
 
 
       
-      script(type='text/javascript').
-        var burger = document.getElementById("hamburger");
-        var nav = document.getElementById("navigation");
-
-        burger.onclick = function(){
-          nav.classList.toggle("hide");
-        }
+      
         
 
 
