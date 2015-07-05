@@ -5,7 +5,7 @@ html, body {
   height:100%;
   padding:0px;
   margin:0px;
-  font-family: helvetica,sans-serif;
+  font-family:  Myriad Pro, helvetica, arial, sans-serif;
 }
 
 #container {
@@ -14,10 +14,14 @@ html, body {
   overflow:hidden;
 }
 
+
+
+
+
+
 #allpictures{
   width: 406%;
   height: 80vh;
-  \\border: blue 5px solid;
   position:relative;
   top:0px;
   left:0vw;
@@ -59,74 +63,70 @@ html, body {
 
 #picture4 {
  background: url("http://mars.jpl.nasa.gov/images/mars-curiosity-rover-mastcam-sedimentary-deposit-lakebed-rocks-pia19074-full.jpg");
-  background-size:cover;
+ background-size:cover;
  background-repeat: no-repeat;
  background-color: black;
 }
 
-#buttons {
- display:block;
- position: absolute;
- top:75vh;
- width:100%;
-}
 
-#back, #next {
- background:#262827;
- border: 4px solid white;
- padding: 20px 40px;
- margin:0px 30px;
- color:#fff;
- font-size:20px;
- font-weight:bold;
- z-index: 10;
-}
 
-#next{
-float:right;
+
+
+
+
+
+
+h1{
+  font-size: 45px;
+  line-height: 50px;
+  margin: 20px 0px;
+  padding: 0px;
+  text-align: center;
 }
 
 #text {
   background: white;
   padding: 10px 30px;
   width:400px;
-  margin:-100px auto 50px auto;
+  margin:-300px auto 50px auto;
   z-index: 10;
+  font-size: 14px;
+  line-height: 20px;
 }
+
 
 #text p {
-  margin-bottom: 100px;
-  font-size: 14px;
-  line-height: 18px;
+  margin-bottom: 30px;
 }
 
-h1{
-  font-size: 45px;
-  font-weight: bold;
-  margin: 20px 0px;
-  padding: 0px;
-  text-align: center;
-}
+
+
+
 
 #return {
+ position: fixed;
+ top: 10px;
+ left: 10px;
+ color: white;
+ font-family:  Myriad Pro, helvetica, arial, sans-serif;
+ font-weight: normal;
+ -webkit-font-smoothing: antialiased;
+ text-decoration: none;
+ font-size: 20px;
+ line-height: 30px;
+}
+
+#back, #next {
  background:#262827;
+ border: 4px solid white;
  padding: 20px 40px;
+ margin: 0px;
  color:#fff;
  font-size:20px;
- font-weight:bold;
- display: block;
- text-align: center;
- text-decoration: none;
+ font-weight: normal;
 }
 
-#return:hover{
-  background: #353836;
+#back{
+  margin-left: 50px;
 }
-
-
-
-
-
-
-
 
