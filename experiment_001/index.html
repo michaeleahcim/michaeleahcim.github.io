@@ -4,15 +4,16 @@
 <head>
 <title>Made with Pixi JS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="../bin/pixi.dev.js"></script>
+<script src="pixi.dev.js"></script>
 <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
+<a href= "../experiments.html" id="back"> Back </a>
 
-<div id="container">
+<div id="game">
 <script>
-var container = document.getElementById("container");
+var container = document.getElementById("game");
 var stage = new PIXI.Stage(0x1E1F1E);
 var windowwidth = window.innerWidth ;
 
@@ -20,17 +21,17 @@ var renderer = PIXI.autoDetectRenderer(windowwidth, 600);
 
 var windowheight = 600;
 
-var texture = PIXI.Texture.fromImage("bunny.png");
+var texture = PIXI.Texture.fromImage("bunny2.png");
 var starttexture = PIXI.Texture.fromImage("start.png");
 
 var bunny = new PIXI.Sprite(texture);
-var bunny3 = new PIXI.Sprite(starttexture);
+var title = new PIXI.Sprite(starttexture);
 
 var bunnyExists = false;
 
 var hit = 0;
 var bunnyHitsFloor = 0;
-var speed = .5;
+var speed = 1;
 
 var score = new PIXI.Text(String(hit), {font:"bold 100px Arial", fill:"black"});
     
@@ -52,7 +53,6 @@ function createNewBunny(){
     var widespot = getRandomInt(max,20);
     bunny.position.x = widespot;
     bunny.position.y = -10;
-
 
     stage.addChild(bunny);
  }
@@ -76,6 +76,8 @@ function createNewBunny(){
 
         stage.removeChild(score);
         score = new PIXI.Text(String(hit), {font:"bold 100px Arial", fill:"black"});
+        score.anchor.x = 0.5;
+        score.anchor.y = 0.5;
         score.position.x = windowwidth/2;
         score.position.y = windowheight/2;
         stage.addChild(score);
@@ -85,19 +87,19 @@ function createNewBunny(){
      };
 
 // Start Button
-    bunny3.anchor.x = 0.5;
-    bunny3.anchor.y = 0.5;
-    bunny3.position.x = windowwidth/2;
-    bunny3.position.y = windowheight/2;
+    title.anchor.x = 0.5;
+    title.anchor.y = 0.5;
+    title.position.x = windowwidth/2;
+    title.position.y = windowheight/2;
 
-    bunny3.buttonMode = true;
-    bunny3.interactive = true;
-    stage.addChild(bunny3);
+    title.buttonMode = true;
+    title.interactive = true;
+    stage.addChild(title);
 
-    bunny3.mousedown = bunny3.touchstart = function(data) {
+    title.mousedown = title.touchstart = function(data) {
         this.isdown = true;
         this.alpha = 1;
-        stage.removeChild(bunny3);
+        stage.removeChild(title);
 
         hit = 0;
         bunnyHitsFloor = 0;
@@ -119,7 +121,7 @@ function animate() {
 
                 bunnyExists = false;
 
-                stage.addChild(bunny3);
+                stage.addChild(title);
             }
 
         }
@@ -139,8 +141,7 @@ function animate() {
 </div>
 
 <article>
-<a href= "../../experiments.html" id="back"> Back </a>
-
+This game was made using Pixi.js
 </article>
 </body>
 </html>
