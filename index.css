@@ -43,6 +43,14 @@ html, body {
   background: red; }
 
 @media only screen and (max-width: 600px) {
-  #container {
+  body #container {
     width: 100%;
     margin: 100px auto; } }
+
+@media only screen and (max-width: 600px) {
+  #container {
+    width: 100%;
+    margin: 100px auto; }
+    #container #container {
+      width: 100%;
+      margin: 100px auto; } }
