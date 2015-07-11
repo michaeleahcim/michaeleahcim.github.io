@@ -130,3 +130,19 @@ h1{
   margin-left: 50px;
 }
 
+
+@media (max-width: 600px) {
+  #text {
+    width: 80%;
+    margin: -500px auto 0px auto;
+    padding: 10px 20px;
+  }
+
+  #back {
+    margin-left: 10px;
+  }
+
+  #allpictures, #container {
+    height: 100vh;
+  }
+}

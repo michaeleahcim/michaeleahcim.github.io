@@ -1,22 +1,13 @@
 @import '_mixins';
 
 
-
+/*
 body{    
     @include smallScreen {
 
     }
     @include largeScreen {
-    	//background-color:green;	
+    	background-color:green;	
     }
 }
-
-#container{
-    @include smallScreen {
-    	width:100%;
-    	margin: 100px auto;
-    }
-    @include largeScreen {
-    	//background-color:green;	
-    }	
-}
+*/

@@ -10,6 +10,10 @@ html, body {
   line-height: 30px;
   font-weight: normal;
   -webkit-font-smoothing: antialiased; }
+  @media only screen and (max-width: 600px) {
+    html, body {
+      font-size: 20px;
+      line-height: 27px; } }
 
 .back {
   color: white;
@@ -32,6 +36,10 @@ html, body {
     text-decoration: none; }
   #container a:hover, #container a:active {
     color: #424242; }
+  @media only screen and (max-width: 600px) {
+    #container {
+      width: 100%;
+      margin: 100px auto; } }
 
 ::-moz-selection {
   /* Code for Firefox */
@@ -42,15 +50,13 @@ html, body {
   color: white;
   background: red; }
 
-@media only screen and (max-width: 600px) {
-  body #container {
-    width: 100%;
-    margin: 100px auto; } }
+/*
+body{    
+    @include smallScreen {
 
-@media only screen and (max-width: 600px) {
-  #container {
-    width: 100%;
-    margin: 100px auto; }
-    #container #container {
-      width: 100%;
-      margin: 100px auto; } }
+    }
+    @include largeScreen {
+    	background-color:green;	
+    }
+}
+*/
