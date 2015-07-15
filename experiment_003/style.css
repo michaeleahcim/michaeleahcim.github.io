@@ -1,0 +1,39 @@
+html, body {
+	width:100%;
+	height:100%;
+	padding:0px;
+	margin:0px;
+	font-family:  Myriad Pro, helvetica, arial, sans-serif;
+	background: #FC4149;
+
+}
+
+#return {
+	font-family:  Myriad Pro, helvetica, arial, sans-serif;
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	color: white;
+	font-family:  Myriad Pro, helvetica, arial, sans-serif;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	text-decoration: none;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+#container {
+	width: 90%;
+	padding: 30px;
+	margin: 100px auto;
+	color: white;
+}
+
+#container h1{
+	text-align: center;
+	font-size: 40px;
+}
+#container p{
+	font-size: 15px;
+	line-height: 25px;
+}
