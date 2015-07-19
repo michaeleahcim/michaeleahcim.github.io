@@ -34,22 +34,6 @@ html, body{
 	margin: 0px 0px 10px 0px;
 }
 
-#life {
-	width: 100%;
-	border: 1px solid white;
-	height: 30px;
-	margin-bottom: 30px;
-}
-
-#lived {
-	width: 26%;
-	height: 100%;
-	text-align: center;
-	color: #191919;
-	font-size: 20px;
-	background: white;
-}
-
 #boxes {
 	margin-bottom: 30px;
 }
