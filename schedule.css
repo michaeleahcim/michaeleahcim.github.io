@@ -40,7 +40,7 @@ html, body{
 
 #box {
 	font-size: 20px;
-	width: 34.3px;
+	width: 35.4px;
 	padding: 2px 0px;
 	color: #191919;
 	border: 2px solid black;
@@ -50,7 +50,7 @@ html, body{
 }
 
 .box {
-	margin-right: -6px;
+	margin: 0 -7px 0  0;
 }
 
 .work {
