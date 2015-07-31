@@ -30,8 +30,11 @@ html, body {
 }
 
 #container h1{
+	font-family: Helvetica, 'Helvetica Neue', Arial, Helvetica, sans-serif, helvetica, sans-serif;
+	font-weight: bold;
 	text-align: center;
-	font-size: 40px;
+	font-size: 42px;
+	line-height: 50px;
 }
 #container p{
 	font-size: 15px;
