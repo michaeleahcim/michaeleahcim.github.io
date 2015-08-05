@@ -200,6 +200,10 @@ var tumblrAutoPager = {
         }
 
         function addNextPage(oj) {
+     
+        	alert("message");
+        	document.body.style.background="green";
+
             if (oj.status == 404) {
                 tAP.remainFlg = false;
                 return;
@@ -239,11 +243,6 @@ var tumblrAutoPager = {
 
             }
             setTimeout(arguments.callee, 200);
-
-            var x = 0;
-        	alert("message" + x);
-        	x += 1;
-        	document.body.style.background="green";
 
         };
 
