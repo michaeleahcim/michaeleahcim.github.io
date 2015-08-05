@@ -200,9 +200,11 @@ var tumblrAutoPager = {
         }
 
         function addNextPage(oj) {
-     
+
         	alert("message");
-        	document.body.style.background="green";
+        	var width = document.body.clientWidth;
+        	var newWidth = width + 500;
+        	document.body.style.width=" \newWidth ";
 
             if (oj.status == 404) {
                 tAP.remainFlg = false;
