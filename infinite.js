@@ -242,7 +242,9 @@ var tumblrAutoPager = {
 
             var x = 0;
         	alert("message" + x);
-        	
+        	x += 1;
+        	document.body.style.background="green";
+
         };
 
         function $(id) {
