@@ -205,9 +205,7 @@ var tumblrAutoPager = {
         	var width = document.body.clientWidth;
         	var newWidth = width + 500;
         	document.body.style.width=newWidth+"px";
-
-        	var infiniteDiv = document.getElementById("posts");
-        	infiniteDiv.width=newWidth+"px";
+        	document.getElementById("posts").style.width=newWidth+"px";
 
             if (oj.status == 404) {
                 tAP.remainFlg = false;
