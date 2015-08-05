@@ -200,6 +200,9 @@ var tumblrAutoPager = {
         }
 
         function addNextPage(oj) {
+
+        	var x = document.getElementsByClassName("post");
+        	x.style.color = "pink";
             if (oj.status == 404) {
                 tAP.remainFlg = false;
                 return;
