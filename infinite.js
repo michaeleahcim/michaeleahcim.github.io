@@ -204,7 +204,7 @@ var tumblrAutoPager = {
         	alert("message");
         	var width = document.body.clientWidth;
         	var newWidth = width + 500;
-        	document.body.style.width=newWidth;
+        	document.body.style.width=newWidth+"px";
 
             if (oj.status == 404) {
                 tAP.remainFlg = false;
