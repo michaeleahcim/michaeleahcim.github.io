@@ -201,10 +201,9 @@ var tumblrAutoPager = {
 
         function addNextPage(oj) {
 
-        	//alert("message");
+        	
         	var width = document.body.clientWidth;
         	var newWidth = width + 500;
-        	document.style.width=newWidth+"px";
         	document.body.style.width=newWidth+"px";
 
         	var infiniteDiv = document.getElementsByClassName("infinite");
