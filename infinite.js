@@ -200,8 +200,9 @@ var tumblrAutoPager = {
         }
 
         function addNextPage(oj) {
+        	
+        	alert("i got called");
 
-        	document.getElementsByClassName("infinite").style.color = "pink";
             if (oj.status == 404) {
                 tAP.remainFlg = false;
                 return;
