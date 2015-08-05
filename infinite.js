@@ -200,6 +200,8 @@ var tumblrAutoPager = {
         }
 
         function addNextPage(oj) {
+        	var x = 0;
+        	alert("message" + x);
             if (oj.status == 404) {
                 tAP.remainFlg = false;
                 return;
