@@ -26,7 +26,7 @@ var tumblrAutoPager = {
         gPFncs[0] = function(aE) {
             var r = [];
             for (var i = 0, l = aE.length; i < l; i++) {
-                if (aE[i].className == "autopagerize_page_element") {
+                if (aE[i].className == "infinite") {
                     r = gCE(aE[i]);
                     break;
                 }
@@ -216,8 +216,6 @@ var tumblrAutoPager = {
             tAP.pp.appendChild(d);
             for (var i = 0; i < posts.length; i++) {
                 tAP.pp.appendChild(posts[i]);
-                document.getElementsByClassName("post").style.color = "pink";
-
             }
             var footer = $("footer");
             footer ? footer.parentNode.appendChild(footer) : null;
