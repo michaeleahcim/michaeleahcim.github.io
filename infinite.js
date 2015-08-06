@@ -202,10 +202,10 @@ var tumblrAutoPager = {
         function addNextPage(oj) {
 
         	// custom code to expand the width
-        	
+
         	var width = document.body.clientWidth;
         	var newWidth = width + 600;
-        	document.body.style.width=newWidth+"px";
+        	//document.body.style.width=newWidth+"px";
         	document.getElementById("posts").style.width=newWidth+"px";
 
             if (oj.status == 404) {
