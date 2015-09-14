@@ -57,12 +57,12 @@ html, body {
   background: red; }
 
 /*
-body{    
+body{
     @include smallScreen {
 
     }
     @include largeScreen {
-    	background-color:green;	
+    	background-color:green;
     }
 }
 */

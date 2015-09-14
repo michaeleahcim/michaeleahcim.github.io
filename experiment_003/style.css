@@ -4,7 +4,6 @@ html, body {
 	margin:0px;
 	font-family:  Myriad Pro, helvetica, arial, sans-serif;
 	background: #FC4149;
-
 }
 
 #return {
@@ -22,7 +21,8 @@ html, body {
 }
 
 #container {
-	width: auto;
+	width: 50%;
+	margin: 10px auto;
 	padding: 50px 30px;
 	color: white;
 }

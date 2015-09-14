@@ -1,2 +1,2 @@
 # Personal Website
-Experiments with web stuff like: Jade, Sass, and PixiJS.
+Experiments with web stuff like: Jade, and Sass.

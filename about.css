@@ -55,14 +55,3 @@ html, body {
 ::selection {
   color: white;
   background: red; }
-
-/*
-body{    
-    @include smallScreen {
-    	background-color:red;	
-    }
-    @include largeScreen {
-    	background-color:green;	
-    }
-}
-*/
