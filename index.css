@@ -10,10 +10,6 @@ html, body {
   line-height: 30px;
   font-weight: normal;
   -webkit-font-smoothing: antialiased; }
-  @media only screen and (max-width: 600px) {
-    html, body {
-      font-size: 20px;
-      line-height: 27px; } }
 
 .back {
   color: white;
@@ -26,11 +22,6 @@ html, body {
 #container {
   width: 80%;
   margin: 100px auto; }
-  @media only screen and (max-width: 600px) {
-    #container {
-      width: auto;
-      margin: 75px 0px;
-      padding: 0px 30px; } }
   #container .title {
     color: white; }
   #container ul, #container li {
@@ -38,9 +29,6 @@ html, body {
     color: #2D2D2D;
     padding: 0px;
     margin: 0px; }
-    @media only screen and (max-width: 600px) {
-      #container ul, #container li {
-        padding-bottom: 10px; } }
   #container a {
     color: #2D2D2D;
     text-decoration: none; }
@@ -48,21 +36,9 @@ html, body {
     color: #424242; }
 
 ::-moz-selection {
-  /* Code for Firefox */
   color: white;
   background: red; }
 
 ::selection {
   color: white;
   background: red; }
-
-/*
-body{
-    @include smallScreen {
-
-    }
-    @include largeScreen {
-    	background-color:green;
-    }
-}
-*/
