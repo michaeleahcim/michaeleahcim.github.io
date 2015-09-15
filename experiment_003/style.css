@@ -2,15 +2,15 @@ html, body {
   width: auto;
   padding: 0px;
   margin: 0px;
-  font-family: Myriad Pro, helvetica, arial, sans-serif;
   background: #FC4149;
-  font-size: 20px;
+  -webkit-font-smoothing: antialiased;
   line-height: 30px;
-  -webkit-font-smoothing: antialiased; }
+  font-family: Myriad Pro, helvetica, arial, sans-serif;
+  font-weight: normal;
+  font-size: 20px; }
 
 #return {
   position: absolute;
-  font-weight: normal;
   top: 10px;
   left: 10px;
   color: white;
