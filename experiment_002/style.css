@@ -15,10 +15,6 @@ html, body {
 }
 
 
-
-
-
-
 #allpictures{
   width: 406%;
   height: 80vh;
@@ -71,11 +67,6 @@ html, body {
 
 
 
-
-
-
-
-
 h1{
   font-size: 45px;
   line-height: 50px;
@@ -94,14 +85,9 @@ h1{
   line-height: 20px;
 }
 
-
 #text p {
   margin-bottom: 30px;
 }
-
-
-
-
 
 #return {
  position: absolute;
@@ -130,19 +116,24 @@ h1{
   margin-left: 50px;
 }
 
-
-@media (max-width: 600px) {
+@media screen and (max-width: 375px) {
   #text {
     width: 80%;
-    margin: -500px auto 0px auto;
+    margin: -550px auto 0px auto;
     padding: 10px 20px;
+  }
+
+  #allpictures, #container {
+    height: 100vh;
+  }
+
+  #return{
+    top: 5px;
+    line-height: 25px;
   }
 
   #back {
     margin-left: 10px;
   }
 
-  #allpictures, #container {
-    height: 100vh;
-  }
 }
