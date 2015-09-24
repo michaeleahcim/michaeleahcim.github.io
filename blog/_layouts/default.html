@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html>
-
   {% include head.html %}
 
   <body>
-  <a href = "http://michaeleahcim.github.io" class="return"> Back </a>
+  <div id="container">
 
-    {% include header.html %}
+  {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+  {{ content }}
 
-    {% include footer.html %}
+  {% include footer.html %}
 
+  </div>
   </body>
-
 </html>
