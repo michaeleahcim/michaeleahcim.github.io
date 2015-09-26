@@ -1,7 +1,0 @@
-# Site settings
-title: Long Thoughts
-baseurl: "/blog" # the subpath of your site, e.g. /blog/
-url: "http://michaeleahcim.github.io" # the base hostname & protocol for your site
-
-# Build settings
-markdown: redcarpet
