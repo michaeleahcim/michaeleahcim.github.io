@@ -1,0 +1,60 @@
+.nospacing, html, body, #container ul, #container li {
+  padding: 0px;
+  margin: 0px; }
+
+html, body {
+  background-color: #191919;
+  font-family: Myriad Pro, helvetica, arial, sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+  color: #2D2D2D;
+  line-height: 30px;
+  -webkit-font-smoothing: antialiased; }
+  @media screen and (max-width: 375px) {
+    html, body {
+      font-size: 20px;
+      line-height: 25px; } }
+
+.back {
+  color: white !important;
+  text-decoration: none;
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  font-size: 20px; }
+  @media screen and (max-width: 375px) {
+    .back {
+      top: 5px; } }
+
+#container {
+  width: 80%;
+  margin: 100px auto; }
+  @media screen and (max-width: 375px) {
+    #container {
+      width: 100%;
+      margin: 50px 10px; } }
+  #container .title {
+    color: white; }
+  #container ul, #container li {
+    list-style: none;
+    color: #2D2D2D; }
+  #container .post-meta {
+    color: black; }
+  #container a {
+    color: #2D2D2D;
+    text-decoration: none; }
+    #container a:hover, #container a:active {
+      color: #424242; }
+    #container a.post-link {
+      margin-right: 10px; }
+  #container article.post-content a {
+    padding: 5px 10px;
+    background: black; }
+
+::-moz-selection {
+  color: white;
+  background: red; }
+
+::selection {
+  color: white;
+  background: red; }

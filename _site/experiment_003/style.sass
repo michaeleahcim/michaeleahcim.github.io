@@ -1,0 +1,45 @@
+// out: style.css
+
+$iPhone: 375px
+
+html, body
+  width: auto
+  padding: 0px
+  margin: 0px
+  background: #FC4149
+  -webkit-font-smoothing: antialiased
+  line-height: 30px
+  font:
+    family: Myriad Pro, helvetica, arial, sans-serif
+    weight: normal
+    size: 20px
+
+#return
+  position: absolute
+  top: 10px
+  left: 10px
+  color: white
+  text-decoration: none
+  @media screen and (max-width: $iPhone)
+    top: 5px
+    line-height: 25px
+#container
+  width: 50%
+  margin: 10px auto
+  padding: 50px 30px
+  color: white
+  @media screen and (max-width: $iPhone)
+    width: 70%
+    padding: 20px 10px
+  h1
+    font:
+      family: Helvetica, sans-serif
+      weight: bold
+      size: 42px
+    text-align: center
+    line-height: 50px
+    @media screen and (max-width: $iPhone)
+      line-height: 45px
+  p
+    font-size: 15px
+    line-height: 25px

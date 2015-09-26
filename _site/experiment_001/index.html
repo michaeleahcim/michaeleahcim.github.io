@@ -1,0 +1,149 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Made with Pixi JS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="pixi.dev.js"></script>
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+<a href= "../experiments.html" id="back"> Back </a>
+
+<div id="game">
+<script>
+var container = document.getElementById("game");
+var stage = new PIXI.Stage(0x1E1F1E);
+var windowwidth = window.innerWidth ;
+
+var renderer = PIXI.autoDetectRenderer(windowwidth, 600);
+
+var windowheight = 600;
+
+var texture = PIXI.Texture.fromImage("bunny2.png");
+var starttexture = PIXI.Texture.fromImage("start.png");
+
+var bunny = new PIXI.Sprite(texture);
+var title = new PIXI.Sprite(starttexture);
+
+var bunnyExists = false;
+
+var hit = 0;
+var bunnyHitsFloor = 0;
+var speed = 1;
+
+var score = new PIXI.Text(String(hit), {font:"bold 100px Arial", fill:"black"});
+
+
+
+stage.interactive = true;
+
+container.appendChild(renderer.view);
+requestAnimFrame( animate );
+
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function createNewBunny(){
+    bunnyExists = true;
+    var max = windowwidth-20;
+    var widespot = getRandomInt(max,20);
+    bunny.position.x = widespot;
+    bunny.position.y = -10;
+
+    stage.addChild(bunny);
+ }
+
+// Bunny
+    bunny.anchor.x = 0.5;
+    bunny.anchor.y = 0.5;
+    bunny.position.x = windowwidth;
+    bunny.position.y = -10;
+
+    bunny.buttonMode = true;
+    bunny.interactive = true;
+
+    bunny.mousedown = bunny.touchstart = function(data) {
+        this.isdown = true;
+        this.alpha = 1;
+        bunnyExists = false;
+
+        hit += 1;
+        speed += .25;
+
+        stage.removeChild(score);
+        score = new PIXI.Text(String(hit), {font:"bold 100px Arial", fill:"black"});
+        score.anchor.x = 0.5;
+        score.anchor.y = 0.5;
+        score.position.x = windowwidth/2;
+        score.position.y = windowheight/2;
+        stage.addChild(score);
+
+        stage.removeChild(bunny);
+        createNewBunny();
+     };
+
+// Start Button
+    title.anchor.x = 0.5;
+    title.anchor.y = 0.5;
+    title.position.x = windowwidth/2;
+    title.position.y = windowheight/2;
+
+    title.buttonMode = true;
+    title.interactive = true;
+    stage.addChild(title);
+
+    title.mousedown = title.touchstart = function(data) {
+        this.isdown = true;
+        this.alpha = 1;
+        stage.removeChild(title);
+
+        hit = 0;
+        bunnyHitsFloor = 0;
+        speed = 2;
+        createNewBunny();
+    };
+
+
+function animate() {
+    requestAnimFrame( animate );
+
+    if (bunnyExists){
+        if (bunny.position.y < windowheight){
+            bunny.position.y += speed;
+
+            if (bunnyHitsFloor == 3) {
+                stage.removeChild(bunny);
+                stage.removeChild(score);
+
+                bunnyExists = false;
+
+                stage.addChild(title);
+            }
+
+        }
+
+        else {
+            bunny.position.y = -10;
+            bunnyHitsFloor += 1;
+        }
+
+
+    }
+    renderer.render(stage);
+}
+
+
+</script>
+</div>
+
+<article>
+<p>
+This game was made using Pixi.js
+</p>
+</article>
+</body>
+</html>

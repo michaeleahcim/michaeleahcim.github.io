@@ -1,0 +1,52 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background: #191919;
+    font-family:  Myriad Pro, helvetica, arial, sans-serif;
+}
+
+#game{
+	width: 100%;
+}
+
+#back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-family:  Myriad Pro, helvetica, arial, sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+article {
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 375px) {
+  #back{
+    top: 5px;
+    line-height: 25px;
+  }
+
+  #game {
+    display: none;
+  }
+
+  article {
+    padding: 100px 0px;
+  }
+  article p{
+    display: none;
+  }
+  article:after {
+    content: 'Sorry, this game is only available in bigger screens.';
+  }
+
+}
