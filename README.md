@@ -12,6 +12,3 @@ This my shit, this my shit
 This my shit, this my shit
 This my shit, this my shit
 This my shit, this my shit
-
-
-is this working now ?
